@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Carelia Upright';
+    src: url('Carelia-Upright.eot');
+    src: local('Carelia Upright'), local('Carelia-Upright'),
+        url('Carelia-Upright.eot?#iefix') format('embedded-opentype'),
+        url('Carelia-Upright.woff2') format('woff2'),
+        url('Carelia-Upright.woff') format('woff'),
+        url('Carelia-Upright.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Carelia';
+    src: url('Carelia-Italic.eot');
+    src: local('Carelia Italic'), local('Carelia-Italic'),
+        url('Carelia-Italic.eot?#iefix') format('embedded-opentype'),
+        url('Carelia-Italic.woff2') format('woff2'),
+        url('Carelia-Italic.woff') format('woff'),
+        url('Carelia-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
