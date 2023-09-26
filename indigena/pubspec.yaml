@@ -74,16 +74,19 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
- flutter:
+
   fonts:
     - family: Raleway
       fonts:
         - asset: assets/fonts/carelia/Carelia-Italic.eot
         - asset: assets/fonts/carelia/Carelia-Upright.eot
-        - asset: assets/fonts/carelia/CRC25.otf
-        - asset: assets/fonts/carelia/CRC35.otf
-        - asset: assets/fonts/carelia/CRC55.otf
-        - asset: assets/fonts/carelia/CRC65.otf
+        - asset: assets/fonts/circefont/CRC25.otf
+        - asset: assets/fonts/circefont/CRC35.otf
+        - asset: assets/fonts/circefont/CRC55.otf
+        - asset: assets/fonts/circefont/CRC65.otf
+
+  assets:
+    - assets/images/logoaltcolors.png
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
