@@ -12,6 +12,4 @@ Planting native can bring back our native ecosystem and regulate animals, plants
 
 
 
-Stack: 
-
-Flutter, Android Studio, Github, VSCode
+Stack: Flutter, Android Studio, Github, VSCode
