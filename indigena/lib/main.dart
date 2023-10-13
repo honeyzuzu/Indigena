@@ -1,53 +1,94 @@
-// Copyright 2021 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
-// #docregion all
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  runApp(const MyApp());
+}
 
-// #docregion MyApp
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter layout demo',
-      home: Scaffold(
-        // #docregion centered-text
-        body: Center(
-          child: Container(
-            color: Color(0xffefebe7),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image(image: AssetImage('assets/images/logoaltcolors.png'), height: 200,),
-                Container( 
-                  decoration: BoxDecoration(
-                    color: Color(0xff406767),
-                    borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(40.0),
-                        bottomRight: Radius.circular(40.0),
-                        topLeft: Radius.circular(40.0),
-                        bottomLeft: Radius.circular(40.0)),
-                  ),
-                  height: 200, 
-                  width: 300,
-                  
-                
-              )
-              ],
-
-              
-            
-            ),
-          ),           // #enddocregion text
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        textTheme: const TextTheme(
+          // bodyText2: TextStyle(color: Colors.red, fontWeight: FontWeight.w900),
         ),
-        // #enddocregion centered-text
+      ),
+      home: const MyHomePage(title: 'Flutter Demo'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+
+  // This controller will store the value of the search bar
+  final TextEditingController _searchController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Container(
+              color: Color(0xffefebe7),
+              height: MediaQuery. of(context). size. height - 16,
+              width: MediaQuery. of(context). size. width,
+
+              child: Column(
+                children: [
+                  Container(
+                    color: Color(0xff406767),
+                    height: 200, width: 200,
+                    child: Container(
+                      color:Color(0xffefebe7),
+                      height: 100, width: 100,
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: TextField(
+                        controller: _searchController,
+                        decoration: InputDecoration(
+                          hintText: 'Search...',
+                          suffixIcon: IconButton(
+                            icon: Icon(Icons.clear),
+                            onPressed: () => _searchController.clear(),
+                          ),
+                          prefixIcon: IconButton(
+                            icon: Icon(Icons.search),
+                            onPressed: () {
+                              // Perform the search here
+                            },
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                        ),
+                      ),
+                    )
+                  )
+                  
+                ]
+                
+          ),
+          ),
+
+          ]
+        ),
       ),
     );
   }
 }
-// #enddocregion all
+
