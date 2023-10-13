@@ -12,3 +12,15 @@ Planting native can bring back our native ecosystem and regulate animals, plants
 
 Stack: 
 Flutter, Android Studio, Github, VSCode
+
+Goals:
+
+Have a working front-end with dummy data
+- Starting with design and implementing it with flutter 
+- Implement filler data at first for a proof of concept 
+Gather necessary plant data for just the Troy region for now 
+- Gather real data on plants in general to create a plant database that can be filtered through
+- Look into the best way to store the data for it to be used
+Put the real data into the front-end
+- Implement the real gathered data into the front end
+
