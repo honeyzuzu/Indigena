@@ -78,8 +78,8 @@ flutter:
   fonts:
     - family: Carelia
       fonts:
-        - asset: assets/fonts/carelia/Carelia-Italic.eot
-        - asset: assets/fonts/carelia/Carelia-Upright.eot
+        - asset: assets/fonts/carelia/Carelia-Italic.ttf
+        - asset: assets/fonts/carelia/Carelia-Upright.ttf
 
     - family: Circe
       fonts:

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'biome.dart';
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key, required this.title});
   final String title;
@@ -48,35 +48,44 @@ class _SearchPageState extends State<SearchPage> {
                             textAlign: TextAlign.center, 
                             style:
                               TextStyle(fontSize: 20, fontFamily: 'Circe', color: Color(0xffefebe7))),
+                              
                         Container(
-                      height: 50, width: 300,
-                      alignment: Alignment.bottomCenter,
-                      decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(40),
-                      color: Color(0xffefebe7).withOpacity(0.7)),
-                      child: TextField(
-                        controller: _searchController,
-                        decoration: InputDecoration(
-                          hintText: 'Start typing...',
-                          hintStyle: TextStyle(color: Color(0xff406767)),
-                          suffixIcon: IconButton(
-                            icon: Icon(Icons.clear),
-                            color: Color(0xff406767),
-                            onPressed: () => _searchController.clear(),
-                          ),
-                          prefixIcon: IconButton(
-                            icon: Icon(Icons.search),
-                            color: Color(0xff406767),
-                            onPressed: () {
-                              // Perform the search here
-                            },
-                          ),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                        ),
-                      ),
-                    )
+                            height: 50, width: 300,
+                            alignment: Alignment.bottomCenter,
+                            
+                            decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(40),
+                            color: Color(0xffefebe7).withOpacity(0.7)),
+
+                            child: TextField(
+                              controller: _searchController,
+                              decoration: InputDecoration(
+                                hintText: 'Start typing...',
+                                hintStyle: TextStyle(color: Color(0xff406767)),
+
+                                suffixIcon: IconButton(
+                                  //clear icon
+                                  icon: Icon(Icons.clear),
+                                  color: Color(0xff406767),
+                                  onPressed: () => _searchController.clear(),
+                                ),
+                                prefixIcon: IconButton(
+                                  //search icon
+                                  icon: Icon(Icons.search),
+                                  color: Color(0xff406767),
+                                  onPressed: () {
+                                    // Direct to biome page
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => BiomePage(title: 'Biome Page',)));
+
+                                  },
+                                ),
+                                border: OutlineInputBorder(
+                                  //edges of search bar
+                                  borderRadius: BorderRadius.circular(20.0),
+                                ),
+                              ),
+                            ),
+                          )
                       ],
                     )
                   )

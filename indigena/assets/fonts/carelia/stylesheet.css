@@ -8,6 +8,7 @@
         url('Carelia-Upright.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    vertical-align: bottom;
 }
 
 @font-face {
@@ -20,5 +21,7 @@
         url('Carelia-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
+    vertical-align: bottom;
+
 }
 
