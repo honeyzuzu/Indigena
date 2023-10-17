@@ -44,30 +44,51 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Container(
+            Container(//bg
               color: Color(0xffefebe7),
               height: MediaQuery. of(context). size. height - 16,
               width: MediaQuery. of(context). size. width,
 
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    color: Color(0xff406767),
-                    height: 200, width: 200,
-                    child: Container(
-                      color:Color(0xffefebe7),
-                      height: 100, width: 100,
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  Image(image: AssetImage('assets/images/logoaltcolors.png'), height: 200,),
+
+                  Container(//green part
+                    height: 200, width: 350,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      color: Color(0xff406767)),
+                    
+                    
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+
+                      children: [
+                        Text("Enter your location\n to determine your local biome\n", 
+                            textAlign: TextAlign.center, 
+                            style:
+                              TextStyle(fontSize: 20, fontFamily: 'Circe', color: Color(0xffefebe7))),
+                        Container(
+                      height: 50, width: 300,
+                      alignment: Alignment.bottomCenter,
+                      decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(40),
+                      color: Color(0xffefebe7).withOpacity(0.7)),
                       child: TextField(
                         controller: _searchController,
                         decoration: InputDecoration(
-                          hintText: 'Search...',
+                          hintText: 'Start typing...',
+                          hintStyle: TextStyle(color: Color(0xff406767)),
                           suffixIcon: IconButton(
                             icon: Icon(Icons.clear),
+                            color: Color(0xff406767),
                             onPressed: () => _searchController.clear(),
                           ),
                           prefixIcon: IconButton(
                             icon: Icon(Icons.search),
+                            color: Color(0xff406767),
                             onPressed: () {
                               // Perform the search here
                             },
@@ -77,6 +98,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                       ),
+                    )
+                      ],
                     )
                   )
                   

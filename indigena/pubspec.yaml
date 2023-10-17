@@ -76,10 +76,13 @@ flutter:
   # example:
 
   fonts:
-    - family: Raleway
+    - family: Carelia
       fonts:
         - asset: assets/fonts/carelia/Carelia-Italic.eot
         - asset: assets/fonts/carelia/Carelia-Upright.eot
+
+    - family: Circe
+      fonts:
         - asset: assets/fonts/circefont/CRC25.otf
         - asset: assets/fonts/circefont/CRC35.otf
         - asset: assets/fonts/circefont/CRC55.otf
