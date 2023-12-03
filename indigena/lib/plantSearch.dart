@@ -23,28 +23,28 @@ class _SearchPageState extends State<SearchPage> {
         child: Column(
           children: [
             Container(//bg
-              color: Color(0xffefebe7),
+              color: const Color(0xffefebe7),
               height: MediaQuery. of(context). size. height - 16,
               width: MediaQuery. of(context). size. width,
 
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image(image: AssetImage('assets/images/logoaltcolors.png'), height: 200,),
+                  const Image(image: AssetImage('assets/images/logoaltcolors.png'), height: 200,),
 
                   Container(//green part
                     height: 200, width: 350,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      color: Color(0xff406767)),
+                      color: const Color(0xff406767)),
                     
                     
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
 
                       children: [
-                        Text("Enter your location\n to determine your local biome\n", 
+                        const Text("Enter your location\n to determine your local biome\n", 
                             textAlign: TextAlign.center, 
                             style:
                               TextStyle(fontSize: 20, fontFamily: 'Circe', color: Color(0xffefebe7))),
@@ -55,27 +55,27 @@ class _SearchPageState extends State<SearchPage> {
                             
                             decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(40),
-                            color: Color(0xffefebe7).withOpacity(0.7)),
+                            color: const Color(0xffefebe7).withOpacity(0.7)),
 
                             child: TextField(
                               controller: _searchController,
                               decoration: InputDecoration(
                                 hintText: 'Start typing...',
-                                hintStyle: TextStyle(color: Color(0xff406767)),
+                                hintStyle: const TextStyle(color: Color(0xff406767)),
 
                                 suffixIcon: IconButton(
                                   //clear icon
-                                  icon: Icon(Icons.clear),
-                                  color: Color(0xff406767),
+                                  icon: const Icon(Icons.clear),
+                                  color: const Color(0xff406767),
                                   onPressed: () => _searchController.clear(),
                                 ),
                                 prefixIcon: IconButton(
                                   //search icon
-                                  icon: Icon(Icons.search),
-                                  color: Color(0xff406767),
+                                  icon: const Icon(Icons.search),
+                                  color: const Color(0xff406767),
                                   onPressed: () {
                                     // Direct to biome page
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => BiomePage(title: 'Biome Page',)));
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BiomePage(title: 'Biome Page',)));
 
                                   },
                                 ),

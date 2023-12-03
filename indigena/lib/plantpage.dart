@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'searchPage.dart';
 
 
 class BiomePage extends StatefulWidget {
@@ -25,7 +24,7 @@ class _BiomePageState extends State<BiomePage> {
         child: Column(
           children: [
             Container(//bg
-              color: Color(0xffefebe7),
+              color: const Color(0xffefebe7),
               height: MediaQuery. of(context). size. height - 16,
               width: MediaQuery. of(context). size. width,
 
@@ -38,10 +37,10 @@ class _BiomePageState extends State<BiomePage> {
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      color: Color(0xff406767)),
+                      color: const Color(0xff406767)),
                     
                     
-                    child: Expanded(child: Column(
+                    child: const Expanded(child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
 
                       children: [
