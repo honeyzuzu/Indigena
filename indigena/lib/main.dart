@@ -18,7 +18,11 @@ class MyApp extends StatelessWidget {
           bodySmall: TextStyle(fontSize: 16.0,fontFamily: 'Circe'),
           bodyLarge: TextStyle(fontSize: 20.0,fontFamily: 'Carelia'),
           // bodyText2: TextStyle(color: Colors.red, fontWeight: FontWeight.w900),
-        ),
+
+        ), 
+        scaffoldBackgroundColor: const Color(0xffefebe7)
+
+
       ),
       home: const SearchPage(title: 'Flutter Demo Home Page'),    );
   }

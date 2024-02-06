@@ -17,18 +17,23 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      resizeToAvoidBottomInset : false,
       
-      body: Padding(
+      body: SingleChildScrollView(
+        child:Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
+
           children: [
             Container(//bg
               color: const Color(0xffefebe7),
-              height: MediaQuery. of(context). size. height - 16,
+              height: MediaQuery. of(context). size. height,
               width: MediaQuery. of(context). size. width,
 
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center, 
+
                 children: [
                   const Image(image: AssetImage('assets/images/logoaltcolors.png'), height: 200,),
 
@@ -97,7 +102,7 @@ class _SearchPageState extends State<SearchPage> {
 
           ]
         ),
-      ),
+      ),),
     );
   }
 }

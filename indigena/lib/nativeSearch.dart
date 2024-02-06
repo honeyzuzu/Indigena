@@ -17,6 +17,8 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      resizeToAvoidBottomInset : false,
+
       
       body: Padding(
         padding: const EdgeInsets.all(8.0),

@@ -18,8 +18,9 @@ class _BiomePageState extends State<BiomePage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      
-      body: Padding(
+      resizeToAvoidBottomInset : false,
+      body: SingleChildScrollView(
+        child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
@@ -29,11 +30,9 @@ class _BiomePageState extends State<BiomePage> {
               width: MediaQuery. of(context). size. width,
 
               child: Column(
-
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(//green part
-                    height: 200, width: 350,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
@@ -60,7 +59,7 @@ class _BiomePageState extends State<BiomePage> {
 
           ]
         ),
-      ),
+      ),),
     );
   }
 }
