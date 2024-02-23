@@ -39,6 +39,7 @@ class _BiomePageState extends State<BiomePage> {
                       color: const Color(0xff406767)),
                     
                     
+                    
                     child: const Expanded(child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
 
