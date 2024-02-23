@@ -38,14 +38,8 @@ class _BiomePageState extends State<BiomePage> {
                       borderRadius: BorderRadius.circular(30),
                       color: const Color(0xff406767)),
                     
-                    
-                    
-                    
                     child: const Expanded(child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-
-
-
                       children: [
                         Text("Temperate Deciduous Forest\n", 
                             textAlign: TextAlign.center, 
