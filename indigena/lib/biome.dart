@@ -33,6 +33,7 @@ class _BiomePageState extends State<BiomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(//green part
+                    height: 700, width: 400,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
@@ -44,7 +45,7 @@ class _BiomePageState extends State<BiomePage> {
                         Text("Temperate Deciduous Forest\n", 
                             textAlign: TextAlign.center, 
                             style:
-                              TextStyle(fontSize: 30, fontFamily: 'Carelia', color: Color(0xffefebe7))),
+                              TextStyle(fontSize: 22, fontFamily: 'Carelia', color: Color(0xffefebe7))),
                        
                       ],
                     ),)
