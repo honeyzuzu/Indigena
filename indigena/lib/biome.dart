@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 
 class BiomePage extends StatefulWidget {
@@ -39,7 +40,7 @@ class _BiomePageState extends State<BiomePage> {
                       borderRadius: BorderRadius.circular(30),
                       color: const Color(0xff406767)),
                     
-                    child: const Expanded(child: Column(
+                    child: Expanded(child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text("Temperate Deciduous Forest\n", 
@@ -47,6 +48,84 @@ class _BiomePageState extends State<BiomePage> {
                             style:
                               TextStyle(fontSize: 22, fontFamily: 'Carelia', color: Color(0xffefebe7))),
                        
+                        CarouselSlider( 
+                          items: [ 
+                  
+                //1st Image of Slider 
+                            Container( 
+                              margin: EdgeInsets.all(6.0), 
+                              decoration: BoxDecoration( 
+                                borderRadius: BorderRadius.circular(8.0), 
+                                image: DecorationImage( 
+                                  image: AssetImage("assets/images/temperatedeciduousforest1.png"), 
+                                  fit: BoxFit.cover, 
+                                ), 
+                              ), 
+                            ), 
+                              
+                            //2nd Image of Slider 
+                            Container( 
+                              margin: EdgeInsets.all(6.0), 
+                              decoration: BoxDecoration( 
+                                borderRadius: BorderRadius.circular(8.0), 
+                                image: DecorationImage( 
+                                  image: AssetImage("assets/images/temperatedeciduousforest2.png"), 
+                                  fit: BoxFit.cover, 
+                                ), 
+                              ), 
+                            ), 
+                              
+                            //3rd Image of Slider 
+                            Container( 
+                              margin: EdgeInsets.all(6.0), 
+                              decoration: BoxDecoration( 
+                                borderRadius: BorderRadius.circular(8.0), 
+                                image: DecorationImage( 
+                                  image: AssetImage("assets/images/temperatedeciduousforest3.png"), 
+                                  fit: BoxFit.cover, 
+                                ), 
+                              ), 
+                            ), 
+                              
+                            //4th Image of Slider 
+                            Container( 
+                              margin: EdgeInsets.all(6.0), 
+                              decoration: BoxDecoration( 
+                                borderRadius: BorderRadius.circular(8.0), 
+                                image: DecorationImage( 
+                                  image: AssetImage("assets/images/temperatedeciduousforest4.png"), 
+                                  fit: BoxFit.cover, 
+                                ), 
+                              ), 
+                            ), 
+                              
+                            //5th Image of Slider 
+                            Container( 
+                              margin: EdgeInsets.all(6.0), 
+                              decoration: BoxDecoration( 
+                                borderRadius: BorderRadius.circular(8.0), 
+                                image: DecorationImage( 
+                                  image: AssetImage("assets/images/temperatedeciduousforest5.png"), 
+                                  fit: BoxFit.cover, 
+                                ), 
+                              ), 
+                            ), 
+  
+          ], 
+              
+            //Slider Container properties 
+              options: CarouselOptions( 
+                height: 180.0, 
+                enlargeCenterPage: true, 
+                autoPlay: true, 
+                aspectRatio: 16 / 9, 
+                autoPlayCurve: Curves.fastOutSlowIn, 
+                enableInfiniteScroll: true, 
+                autoPlayAnimationDuration: Duration(milliseconds: 800), 
+                viewportFraction: 0.8, 
+              ), 
+          ), 
+                      
                       ],
                     ),)
                   )
