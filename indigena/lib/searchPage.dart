@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'biome.dart';
+import 'package:uuid/uuid.dart';
+import 'placeService.dart';
+import 'addressSearch.dart';
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key, required this.title});
   final String title;
@@ -72,7 +75,18 @@ class _SearchPageState extends State<SearchPage> {
                                   //clear icon
                                   icon: const Icon(Icons.clear),
                                   color: const Color(0xff406767),
-                                  onPressed: () => _searchController.clear(),
+                                  onPressed: ()  async {//////////////////// may not need async
+                                      final sessionToken = Uuid().v4();
+                                      final Suggestion result = await showSearch( /////////////////type issues, Suggestion in placeService.dart
+                                        context: context,
+                                        delegate: AddressSearch(sessionToken),
+                                      );
+                                      if (result != null){
+                                        setState(() {
+                                          _searchController.text = result.description;
+                                        });
+                                      }
+                                  },
                                 ),
                                 prefixIcon: IconButton(
                                   //search icon
