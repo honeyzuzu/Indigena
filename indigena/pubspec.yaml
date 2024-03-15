@@ -29,7 +29,8 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   flutter:
-    sdk: flutter
+    sdk: flutter 
+  carousel_slider: ^4.2.1
 
 
 
@@ -91,6 +92,12 @@ flutter:
 
   assets:
     - assets/images/logoaltcolors.png
+    - assets/images/temperatedeciduousforest1.png
+    - assets/images/temperatedeciduousforest2.png
+    - assets/images/temperatedeciduousforest3.png
+    - assets/images/temperatedeciduousforest4.png
+    - assets/images/temperatedeciduousforest5.png
+
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
