@@ -26,19 +26,21 @@ class _BiomePageState extends State<BiomePage> {
         child: Column(
           children: [
             Container(//bg
-              color: const Color(0xffefebe7),
+              padding: EdgeInsets.only(top: 48.0),
+              color: const Color(0xff406767),
               height: MediaQuery. of(context). size. height - 16,
               width: MediaQuery. of(context). size. width,
 
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Container(//green part
-                    height: 700, width: 400,
+                  Container(//white part
+
+                    height: 200, width: 325,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      color: const Color(0xff406767)),
+                      color: const Color(0xffefebe7).withOpacity(0.7)),
                     
                     child: Expanded(child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -118,7 +120,13 @@ class _BiomePageState extends State<BiomePage> {
                 viewportFraction: 0.8, 
               ), 
           ), 
-          Text("Temperate Deciduous Forest\n", 
+          
+                      
+                      ],
+                    ),)
+                  ),
+                  
+                  Text("Temperate Deciduous Forest\n", 
                             textAlign: TextAlign.center, 
                             style:
                               TextStyle(fontSize: 22, fontFamily: 'Carelia', color: Color(0xffefebe7))),
@@ -126,11 +134,6 @@ class _BiomePageState extends State<BiomePage> {
           Text("The biome or ecological region that Troy falls within is typically referred to as the \"temperate deciduous forest biome.\" This biome is characterized by four distinct seasons, including relatively cold winters and warm summers, and is dominated by deciduous trees such as oak, maple, and beech. It is also part of the larger Northeastern coastal forest ecoregion, which extends along the northeastern coast of the United States and into southeastern Canada.\n", 
           textAlign: TextAlign.center, style: TextStyle(fontSize: 16, fontFamily: 'Circe', color: Color(0xffefebe7)),)
           
-                      
-                      ],
-                    ),)
-                  )
-                  
                 ]
                 
           ),
