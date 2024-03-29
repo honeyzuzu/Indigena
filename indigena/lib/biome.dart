@@ -43,29 +43,22 @@ class _BiomePageState extends State<BiomePage> {
                     child: Expanded(child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Temperate Deciduous Forest\n", 
-                            textAlign: TextAlign.center, 
-                            style:
-                              TextStyle(fontSize: 22, fontFamily: 'Carelia', color: Color(0xffefebe7))),
-                       
                         CarouselSlider( 
                           items: [ 
-                  
                 //1st Image of Slider 
                             Container( 
-                              margin: EdgeInsets.all(6.0), 
+                              margin: EdgeInsets.all(3.0), 
                               decoration: BoxDecoration( 
                                 borderRadius: BorderRadius.circular(8.0), 
                                 image: DecorationImage( 
                                   image: AssetImage("assets/images/temperatedeciduousforest1.png"), 
-                                  fit: BoxFit.cover, 
                                 ), 
                               ), 
                             ), 
                               
                             //2nd Image of Slider 
                             Container( 
-                              margin: EdgeInsets.all(6.0), 
+                              margin: EdgeInsets.all(3.0), 
                               decoration: BoxDecoration( 
                                 borderRadius: BorderRadius.circular(8.0), 
                                 image: DecorationImage( 
@@ -77,7 +70,7 @@ class _BiomePageState extends State<BiomePage> {
                               
                             //3rd Image of Slider 
                             Container( 
-                              margin: EdgeInsets.all(6.0), 
+                              margin: EdgeInsets.all(3.0), 
                               decoration: BoxDecoration( 
                                 borderRadius: BorderRadius.circular(8.0), 
                                 image: DecorationImage( 
@@ -89,7 +82,7 @@ class _BiomePageState extends State<BiomePage> {
                               
                             //4th Image of Slider 
                             Container( 
-                              margin: EdgeInsets.all(6.0), 
+                              margin: EdgeInsets.all(3.0), 
                               decoration: BoxDecoration( 
                                 borderRadius: BorderRadius.circular(8.0), 
                                 image: DecorationImage( 
@@ -115,7 +108,7 @@ class _BiomePageState extends State<BiomePage> {
               
             //Slider Container properties 
               options: CarouselOptions( 
-                height: 180.0, 
+                height: 170.0, 
                 enlargeCenterPage: true, 
                 autoPlay: true, 
                 aspectRatio: 16 / 9, 
@@ -125,6 +118,14 @@ class _BiomePageState extends State<BiomePage> {
                 viewportFraction: 0.8, 
               ), 
           ), 
+          Text("Temperate Deciduous Forest\n", 
+                            textAlign: TextAlign.center, 
+                            style:
+                              TextStyle(fontSize: 22, fontFamily: 'Carelia', color: Color(0xffefebe7))),
+                       
+          Text("The biome or ecological region that Troy falls within is typically referred to as the \"temperate deciduous forest biome.\" This biome is characterized by four distinct seasons, including relatively cold winters and warm summers, and is dominated by deciduous trees such as oak, maple, and beech. It is also part of the larger Northeastern coastal forest ecoregion, which extends along the northeastern coast of the United States and into southeastern Canada.\n", 
+          textAlign: TextAlign.center, style: TextStyle(fontSize: 16, fontFamily: 'Circe', color: Color(0xffefebe7)),)
+          
                       
                       ],
                     ),)
