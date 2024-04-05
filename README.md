@@ -1,15 +1,38 @@
-Indigena is an app to help local gardeners and farmers plant native plant species. It has informational guidance on what species to plant, how to plant them, and the effect that they will have on local pest and animal populations. 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
 
-Why is this a problem?
+<h1>Indigena: Reconnecting with Native Landscapes</h1>
+<p>Indigena is a mobile application designed to assist local gardeners and farmers in planting native plant species. It provides comprehensive guidance on selecting suitable species, planting techniques, and the impact of these plants on local pest and animal populations.</p>
 
-Farmers, local gardeners, and your common person have no idea that America’s natural landscape was formerly vast grasslands, not the woody forests that we think they are today. The truth of the matter is that Europeans, when colonizing America, brought over all their familiar European forests back with them in the new land. They planted these trees in such excess that we now have little to no remnants of what the native landscape was. 
+<h2>The Problem Statement</h2>
+<p>Many farmers, local gardeners, and members of the general public are unaware that America's natural landscape was once dominated by vast grasslands, not the wooded forests commonly seen today. Historically, European settlers imported familiar European forest species to America, inadvertently altering the native landscape significantly. As a result, little remains of the original ecosystem.</p>
 
-While we humans are easily adaptable to different landscapes, the original native animal and plant species have not yet adapted. The changes to the landscape have caused an ecological imbalance resulting in various overgrowths, invasive species, and competition. There is now an overwhelming amount of pest species that are attacking farmer’s crops with none of the natural ecological systems in place to keep the pests at bay. 
+<p>While humans can adapt to various landscapes, the original native animal and plant species have not had sufficient time to adjust. This disruption has led to ecological imbalances, including overgrowth, invasive species, and heightened competition. Consequently, there is now a proliferation of pest species attacking crops, with natural ecological systems failing to keep these pests in check.</p>
 
-Planting native can bring back our native ecosystem and regulate animals, plants, pests, and people. 
+<h2>Solution: Embracing Native Planting</h2>
+<p>Indigena advocates for the revival of native ecosystems through the planting of indigenous plant species. By reintroducing these native plants, we can restore ecological balance, regulate animal populations, and mitigate pest infestations. Through Indigena, users can make informed decisions that contribute to the restoration of natural habitats.</p>
 
-Stack: 
-Flutter, Android Studio, Github, VSCode, Figma
+<h2>Technology Stack</h2>
+<p>Indigena is built using the following technologies:</p>
+<ul>
+    <li>Flutter</li>
+    <li>Android Studio</li>
+    <li>GitHub</li>
+    <li>VSCode</li>
+    <li>Figma</li>
+</ul>
 
-Team: Queenie Sun (honeyzuzu)
-Nicholas Grablevsky (eggjpeg)
+<h2>Development Team</h2>
+<p>Indigena is developed by:</p>
+<ul>
+    <li>Queenie Sun (honeyzuzu)</li>
+    <li>Nicholas Grablevsky (eggjpeg)</li>
+</ul>
+
+</body>
+</html>
