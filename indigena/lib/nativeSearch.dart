@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
+import 'biome.dart';
+import 'package:uuid/uuid.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
+class _nativeSearchState extends State<nativeSearch>  {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,7 +11,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: NativeSearchPage(),
+      home: nativeSearchPage(),
     );
   }
 }
@@ -28,7 +26,8 @@ class NativeSearchPage extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.location_on),
             onPressed: () {
-              // Implement location change
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BiomePage(title: 'Biome Page',)));
+
             },
           ),
         ],
