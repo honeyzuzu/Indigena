@@ -1,106 +1,96 @@
 import 'package:flutter/material.dart';
-import 'biome.dart';
-class SearchPage extends StatefulWidget {
-  const SearchPage({super.key, required this.title});
-  final String title;
 
-  @override
-  State<SearchPage> createState() => _SearchPageState();
+void main() {
+  runApp(MyApp());
 }
 
-class _SearchPageState extends State<SearchPage> {
-
-  // This controller will store the value of the search bar
-  final TextEditingController _searchController = TextEditingController();
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
-    return Scaffold(
-      resizeToAvoidBottomInset : false,
-
-      
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            Container(//bg
-              color: const Color(0xffefebe7),
-              height: MediaQuery. of(context). size. height - 16,
-              width: MediaQuery. of(context). size. width,
-
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Image(image: AssetImage('assets/images/logoaltcolors.png'), height: 200,),
-
-                  Container(//green part
-                    height: 200, width: 350,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: const Color(0xff406767)),
-                    
-                    
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-
-                      children: [
-                        const Text("Enter your location\n to determine your local biome\n", 
-                            textAlign: TextAlign.center, 
-                            style:
-                              TextStyle(fontSize: 20, fontFamily: 'Circe', color: Color(0xffefebe7))),
-                              
-                        Container(
-                            height: 50, width: 300,
-                            alignment: Alignment.bottomCenter,
-                            
-                            decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(40),
-                            color: const Color(0xffefebe7).withOpacity(0.7)),
-
-                            child: TextField(
-                              controller: _searchController,
-                              decoration: InputDecoration(
-                                hintText: 'Start typing...',
-                                hintStyle: const TextStyle(color: Color(0xff406767)),
-
-                                suffixIcon: IconButton(
-                                  //clear icon
-                                  icon: const Icon(Icons.clear),
-                                  color: const Color(0xff406767),
-                                  onPressed: () => _searchController.clear(),
-                                ),
-                                prefixIcon: IconButton(
-                                  //search icon
-                                  icon: const Icon(Icons.search),
-                                  color: const Color(0xff406767),
-                                  onPressed: () {
-                                    // Direct to biome page
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BiomePage(title: 'Biome Page',)));
-
-                                  },
-                                ),
-                                border: OutlineInputBorder(
-                                  //edges of search bar
-                                  borderRadius: BorderRadius.circular(20.0),
-                                ),
-                              ),
-                            ),
-                          )
-                      ],
-                    )
-                  )
-                  
-                ]
-                
-          ),
-          ),
-
-          ]
-        ),
+    return MaterialApp(
+      title: 'Native Plant Check',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      home: NativeSearchPage(),
     );
   }
 }
 
+class NativeSearchPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Is it Native?'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.location_on),
+            onPressed: () {
+              // Implement location change
+            },
+          ),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  labelText: 'Start typing a plant name...',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ),
+            ListTile(
+              title: Text('Your Biome: Deciduous Forest'),
+              leading: Icon(Icons.filter_vintage),
+            ),
+            _buildPlantCard('Plant Name', 'Native', null),
+            _buildPlantCard('Plant Name', 'Non-native', ['Alternative 1', 'Alternative 2']),
+            _buildPlantCard('Plant Name', 'Invasive', ['Alternative 1', 'Alternative 2']),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPlantCard(String name, String type, List<String>? alternatives) {
+    return Card(
+      child: Column(
+        children: [
+          ListTile(
+            title: Text(name),
+            subtitle: Text('Type: $type'),
+          ),
+          Container(
+            width: double.infinity,
+            height: 200,
+            color: Colors.grey[300],
+            // You should add your image here. Placeholder for now.
+            child: Icon(Icons.image, size: 100),
+          ),
+          if (alternatives != null) ...[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text('Alternatives:', style: TextStyle(fontWeight: FontWeight.bold)),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: alternatives.map((a) => Text('• $a')).toList(),
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+}
