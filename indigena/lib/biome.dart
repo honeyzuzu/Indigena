@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-
+import 'problemSearch.dart';
 
 class BiomePage extends StatefulWidget {
   const BiomePage({super.key, required this.title});
@@ -149,6 +149,18 @@ class _BiomePageState extends State<BiomePage> {
           ]
         ),
       ),),
+            bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => PlantSearchScreen()),
+            );
+          },
+          child: Text('Go to Problem Search'),
+        ),
+      ),
     );
   }
 }
