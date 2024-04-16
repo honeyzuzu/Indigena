@@ -25,7 +25,9 @@ class MyApp extends StatelessWidget {
 }
 
 class PlantSearchScreen extends StatelessWidget {
-  const PlantSearchScreen({super.key});
+   final TextEditingController _searchController = TextEditingController();
+
+   PlantSearchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -75,15 +77,35 @@ class PlantSearchScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Start typing a plant name...',
-                    
-                    border: InputBorder.none,
+                 child: TextField(
+                              controller: _searchController,
+                              decoration: InputDecoration(
+                                hintText: 'Start typing...',
+                                hintStyle: const TextStyle(color: Color(0xff406767)),
 
-                    contentPadding: EdgeInsets.all(12),
-                  ),
-                ),
+                                suffixIcon: IconButton(
+                                  //clear icon
+                                  icon: const Icon(Icons.clear),
+                                  color: const Color(0xff406767),
+                                  onPressed: () => _searchController.clear(),
+                                      
+                                  
+                                ),
+                                prefixIcon: IconButton(
+                                  //search icon
+                                  icon: const Icon(Icons.search),
+                                  color: const Color(0xff406767),
+                                  onPressed: () {
+                                    // Direct to biome page
+
+                                  },
+                                ),
+                                border: OutlineInputBorder(
+                                  //edges of search bar
+                                  borderRadius: BorderRadius.circular(20.0),
+                                ),
+                              ),
+                            ),
               ),
             ),
             Container(

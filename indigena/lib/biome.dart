@@ -155,7 +155,7 @@ class _BiomePageState extends State<BiomePage> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const PlantSearchScreen()),
+              MaterialPageRoute(builder: (context) =>  PlantSearchScreen()),
             );
           },
           child: const Text('Go to Problem Search'),
