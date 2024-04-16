@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart'; // For using SystemUiOverlayStyle
 
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // Set the status bar style
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+
     return MaterialApp(
       title: 'Plant Problem Search',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
       home: PlantSearchScreen(),
     );
   }
@@ -15,42 +26,73 @@ class PlantSearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text('Problem Search'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.location_on),
-            onPressed: () {
-              // Logic to change location
-            },
-          ),
-        ],
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+          icon: Icon(Icons.location_on, color: Colors.black),
+          onPressed: () {
+            // Logic to change location
+          },
+        ),
+        actions: [],
+        systemOverlayStyle: SystemUiOverlayStyle.dark,
       ),
-      body: SingleChildScrollView(
+      body: Container(
+        padding: EdgeInsets.only(top: 8),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
+              child: Text(
+                'Problem Search',
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Padding(
               padding: EdgeInsets.all(16.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  labelText: 'Start typing a plant name...',
-                  border: OutlineInputBorder(),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.2),
+                      spreadRadius: 2,
+                      blurRadius: 4,
+                      offset: Offset(0, 3),
+                    ),
+                  ],
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Start typing a plant name...',
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.all(12),
+                  ),
                 ),
               ),
             ),
-            Container(
-              alignment: Alignment.centerLeft,
+            Padding(
               padding: EdgeInsets.all(16.0),
               child: Text(
                 'Your Biome: Deciduous Forest',
                 style: TextStyle(
+                  fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-            PlantInfoCard(),
-            PlantInfoCard(),
-            PlantInfoCard(),
+            Expanded(
+              child: ListView.builder(
+                itemCount: 3, // Number of plants you want to show, can be dynamic
+                itemBuilder: (context, index) {
+                  return PlantInfoCard();
+                },
+              ),
+            ),
           ],
         ),
       ),
@@ -61,12 +103,28 @@ class PlantSearchScreen extends StatelessWidget {
 class PlantInfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12.0),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.2),
+            spreadRadius: 1,
+            blurRadius: 3,
+            offset: Offset(0, 1),
+          ),
+        ],
+      ),
       child: ListTile(
-        title: Text('Plant Name'),
+        contentPadding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+        title: Text('Plant Name', style: TextStyle(fontWeight: FontWeight.bold)),
         subtitle: Text('basic description that continues with a...'),
-        leading: Image.asset('path/to/your/image.png'), // replace with your image path
-        trailing: Icon(Icons.image),
+        trailing: ClipRRect(
+          borderRadius: BorderRadius.circular(8.0),
+          child: Image.asset('assets/images/temperatedeciduousforest1.png', width: 100), // Use your own image path
+        ),
       ),
     );
   }
