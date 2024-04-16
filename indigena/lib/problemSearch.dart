@@ -29,7 +29,7 @@ class PlantSearchScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: const Color(0xffefebe7).withOpacity(0.7),
         leading: IconButton(
           icon: Icon(Icons.location_on, color: Colors.black),
           onPressed: () {
@@ -55,7 +55,7 @@ class PlantSearchScreen extends StatelessWidget {
               padding: EdgeInsets.all(16.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: const Color(0xffefebe7).withOpacity(0.7),
                   borderRadius: BorderRadius.circular(8.0),
                   boxShadow: [
                     BoxShadow(
@@ -103,10 +103,10 @@ class PlantSearchScreen extends StatelessWidget {
 class PlantInfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Container( 
       margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: const Color(0xff406767),
         borderRadius: BorderRadius.circular(12.0),
         boxShadow: [
           BoxShadow(
@@ -119,8 +119,8 @@ class PlantInfoCard extends StatelessWidget {
       ),
       child: ListTile(
         contentPadding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-        title: Text('Plant Name', style: TextStyle(fontWeight: FontWeight.bold)),
-        subtitle: Text('basic description that continues with a...'),
+        title: Text('Plant Name', style: TextStyle(fontWeight: FontWeight.bold, color:  const Color(0xffefebe7))),
+        subtitle: Text('basic description that continues with a...', style: TextStyle(color:  const Color(0xffefebe7))),
         trailing: ClipRRect(
           borderRadius: BorderRadius.circular(8.0),
           child: Image.asset('assets/images/temperatedeciduousforest1.png', width: 100), // Use your own image path
