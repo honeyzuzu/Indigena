@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'biome.dart';
-import 'package:uuid/uuid.dart';
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key, required this.title});
   final String title;

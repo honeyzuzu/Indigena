@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'biome.dart';
-import 'package:uuid/uuid.dart';
 
 class _nativeSearchState extends State<nativeSearch>  {
   @override
@@ -17,14 +16,16 @@ class _nativeSearchState extends State<nativeSearch>  {
 }
 
 class NativeSearchPage extends StatelessWidget {
+  const NativeSearchPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Is it Native?'),
+        title: const Text('Is it Native?'),
         actions: [
           IconButton(
-            icon: Icon(Icons.location_on),
+            icon: const Icon(Icons.location_on),
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BiomePage(title: 'Biome Page',)));
 
@@ -35,8 +36,8 @@ class NativeSearchPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: TextField(
                 decoration: InputDecoration(
                   labelText: 'Start typing a plant name...',
@@ -44,7 +45,7 @@ class NativeSearchPage extends StatelessWidget {
                 ),
               ),
             ),
-            ListTile(
+            const ListTile(
               title: Text('Your Biome: Deciduous Forest'),
               leading: Icon(Icons.filter_vintage),
             ),
@@ -70,11 +71,11 @@ class NativeSearchPage extends StatelessWidget {
             height: 200,
             color: Colors.grey[300],
             // You should add your image here. Placeholder for now.
-            child: Icon(Icons.image, size: 100),
+            child: const Icon(Icons.image, size: 100),
           ),
           if (alternatives != null) ...[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text('Alternatives:', style: TextStyle(fontWeight: FontWeight.bold)),

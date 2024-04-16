@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Plant Problem Search',
       home: PlantSearchScreen(),
     );
@@ -12,14 +14,16 @@ class MyApp extends StatelessWidget {
 }
 
 class PlantSearchScreen extends StatelessWidget {
+  const PlantSearchScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Problem Search'),
+        title: const Text('Problem Search'),
         actions: [
           IconButton(
-            icon: Icon(Icons.location_on),
+            icon: const Icon(Icons.location_on),
             onPressed: () {
               // Logic to change location
             },
@@ -29,7 +33,7 @@ class PlantSearchScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(16.0),
               child: TextField(
                 decoration: InputDecoration(
@@ -40,17 +44,17 @@ class PlantSearchScreen extends StatelessWidget {
             ),
             Container(
               alignment: Alignment.centerLeft,
-              padding: EdgeInsets.all(16.0),
-              child: Text(
+              padding: const EdgeInsets.all(16.0),
+              child: const Text(
                 'Your Biome: Deciduous Forest',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-            PlantInfoCard(),
-            PlantInfoCard(),
-            PlantInfoCard(),
+            const PlantInfoCard(),
+            const PlantInfoCard(),
+            const PlantInfoCard(),
           ],
         ),
       ),
@@ -59,14 +63,16 @@ class PlantSearchScreen extends StatelessWidget {
 }
 
 class PlantInfoCard extends StatelessWidget {
+  const PlantInfoCard({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        title: Text('Plant Name'),
-        subtitle: Text('basic description that continues with a...'),
+        title: const Text('Plant Name'),
+        subtitle: const Text('basic description that continues with a...'),
         leading: Image.asset('path/to/your/image.png'), // replace with your image path
-        trailing: Icon(Icons.image),
+        trailing: const Icon(Icons.image),
       ),
     );
   }

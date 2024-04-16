@@ -26,7 +26,7 @@ class _BiomePageState extends State<BiomePage> {
         child: Column(
           children: [
             Container(//bg
-              padding: EdgeInsets.only(top: 48.0),
+              padding: const EdgeInsets.only(top: 48.0),
               
               color: const Color(0xff406767),
               height: MediaQuery. of(context). size. height - 16,
@@ -50,10 +50,10 @@ class _BiomePageState extends State<BiomePage> {
                           items: [ 
                 //1st Image of Slider 
                             Container( 
-                              margin: EdgeInsets.all(3.0), 
+                              margin: const EdgeInsets.all(3.0), 
                               decoration: BoxDecoration( 
                                 borderRadius: BorderRadius.circular(8.0), 
-                                image: DecorationImage( 
+                                image: const DecorationImage( 
                                   image: AssetImage("assets/images/temperatedeciduousforest1.png"), 
                                 ), 
                               ), 
@@ -61,10 +61,10 @@ class _BiomePageState extends State<BiomePage> {
                               
                             //2nd Image of Slider 
                             Container( 
-                              margin: EdgeInsets.all(3.0), 
+                              margin: const EdgeInsets.all(3.0), 
                               decoration: BoxDecoration( 
                                 borderRadius: BorderRadius.circular(8.0), 
-                                image: DecorationImage( 
+                                image: const DecorationImage( 
                                   image: AssetImage("assets/images/temperatedeciduousforest2.png"), 
                                   fit: BoxFit.cover, 
                                 ), 
@@ -73,10 +73,10 @@ class _BiomePageState extends State<BiomePage> {
                               
                             //3rd Image of Slider 
                             Container( 
-                              margin: EdgeInsets.all(3.0), 
+                              margin: const EdgeInsets.all(3.0), 
                               decoration: BoxDecoration( 
                                 borderRadius: BorderRadius.circular(8.0), 
-                                image: DecorationImage( 
+                                image: const DecorationImage( 
                                   image: AssetImage("assets/images/temperatedeciduousforest3.png"), 
                                   fit: BoxFit.cover, 
                                 ), 
@@ -85,10 +85,10 @@ class _BiomePageState extends State<BiomePage> {
                               
                             //4th Image of Slider 
                             Container( 
-                              margin: EdgeInsets.all(3.0), 
+                              margin: const EdgeInsets.all(3.0), 
                               decoration: BoxDecoration( 
                                 borderRadius: BorderRadius.circular(8.0), 
-                                image: DecorationImage( 
+                                image: const DecorationImage( 
                                   image: AssetImage("assets/images/temperatedeciduousforest4.png"), 
                                   fit: BoxFit.cover, 
                                 ), 
@@ -97,10 +97,10 @@ class _BiomePageState extends State<BiomePage> {
                               
                             //5th Image of Slider 
                             Container( 
-                              margin: EdgeInsets.all(6.0), 
+                              margin: const EdgeInsets.all(6.0), 
                               decoration: BoxDecoration( 
                                 borderRadius: BorderRadius.circular(8.0), 
-                                image: DecorationImage( 
+                                image: const DecorationImage( 
                                   image: AssetImage("assets/images/temperatedeciduousforest5.png"), 
                                   fit: BoxFit.cover, 
                                 ), 
@@ -117,7 +117,7 @@ class _BiomePageState extends State<BiomePage> {
                 aspectRatio: 16 / 9, 
                 autoPlayCurve: Curves.fastOutSlowIn, 
                 enableInfiniteScroll: true, 
-                autoPlayAnimationDuration: Duration(milliseconds: 800), 
+                autoPlayAnimationDuration: const Duration(milliseconds: 800), 
                 viewportFraction: 0.8, 
               ), 
           ), 
@@ -126,20 +126,20 @@ class _BiomePageState extends State<BiomePage> {
                       ],
                     ),)
                   ),
-                  SizedBox(height: 20),
-                  Text("Temperate Deciduous Forest\n", 
+                  const SizedBox(height: 20),
+                  const Text("Temperate Deciduous Forest\n", 
                             textAlign: TextAlign.center, 
                             style:
                               TextStyle(height: 0.7, fontSize: 22, fontFamily: 'Carelia', color: Color(0xffefebe7))),
 
-          Text("The biome or ecological region that Troy falls within is typically referred to as the \"temperate deciduous forest biome.\" This biome is characterized by four distinct seasons, including relatively cold winters and warm summers, and is dominated by deciduous trees such as oak, maple, and beech. It is also part of the larger Northeastern coastal forest ecoregion, which extends along the northeastern coast of the United States and into southeastern Canada.\n", 
+          const Text("The biome or ecological region that Troy falls within is typically referred to as the \"temperate deciduous forest biome.\" This biome is characterized by four distinct seasons, including relatively cold winters and warm summers, and is dominated by deciduous trees such as oak, maple, and beech. It is also part of the larger Northeastern coastal forest ecoregion, which extends along the northeastern coast of the United States and into southeastern Canada.\n", 
           textAlign: TextAlign.center, style: TextStyle(fontSize: 16, fontFamily: 'Circe', color: Color(0xffefebe7)),),
           
-          Text("Why plant native?\n", 
+          const Text("Why plant native?\n", 
                             textAlign: TextAlign.center, 
                             style:
                               TextStyle(height: 0.7, fontSize: 22, fontFamily: 'Carelia', color: Color(0xffefebe7))),
-                 Text("Its good! Its awesome! Woohoo\n", 
+                 const Text("Its good! Its awesome! Woohoo\n", 
           textAlign: TextAlign.center, style: TextStyle(fontSize: 16, fontFamily: 'Circe', color: Color(0xffefebe7)),)
                 ]
                 
@@ -155,10 +155,10 @@ class _BiomePageState extends State<BiomePage> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => PlantSearchScreen()),
+              MaterialPageRoute(builder: (context) => const PlantSearchScreen()),
             );
           },
-          child: Text('Go to Problem Search'),
+          child: const Text('Go to Problem Search'),
         ),
       ),
     );
