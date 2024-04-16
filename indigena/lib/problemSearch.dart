@@ -30,10 +30,12 @@ class PlantSearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+                      backgroundColor: const Color(0xff406767),
+
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: const Color(0xffefebe7).withOpacity(0.7),
+        backgroundColor: const Color(0xff406767),
         leading: IconButton(
           icon: Icon(Icons.location_on, color: Colors.black),
           onPressed: () {
@@ -45,14 +47,17 @@ class PlantSearchScreen extends StatelessWidget {
       ),
       body: Container(
         padding: EdgeInsets.only(top: 8),
+        
         child: Column(
+          
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0),
+
               child: Text(
                 'Problem Search',
-                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color:  const Color(0xffefebe7)),
               ),
             ),
             Padding(
@@ -73,21 +78,31 @@ class PlantSearchScreen extends StatelessWidget {
                 child: TextField(
                   decoration: InputDecoration(
                     labelText: 'Start typing a plant name...',
+                    
                     border: InputBorder.none,
+
                     contentPadding: EdgeInsets.all(12),
                   ),
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(16.0),
+            Container(
+              padding: EdgeInsets.all(6.0),
+                    margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 45.0),
+
+              decoration: BoxDecoration(
+                color:const Color(0xff345454), // Darker green container
+                borderRadius: BorderRadius.circular(40.0),
+              ),
               child: Text(
                 'Your Biome: Deciduous Forest',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
+                  color: Colors.white, // White text color
                 ),
               ),
+              
             ),
            Expanded(
   child: ListView.builder(
@@ -121,8 +136,8 @@ class PlantInfoCard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12.0),
+        color: const Color(0xff345454),
+        borderRadius: BorderRadius.circular(30.0),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.2),
@@ -133,9 +148,9 @@ class PlantInfoCard extends StatelessWidget {
         ],
       ),
       child: ListTile(
-        contentPadding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-        title: Text('Plant Name', style: TextStyle(fontWeight: FontWeight.bold)),
-        subtitle: Text('basic description that continues with a...'),
+        contentPadding: EdgeInsets.symmetric(vertical: 40.0, horizontal: 16.0),
+        title: Text('Plant Name', style: TextStyle(fontWeight: FontWeight.bold, color:  const Color(0xffefebe7))),
+        subtitle: Text('basic description that continues with a... basic description that continues with a... basic description that continues with a... ', style: TextStyle(color: const Color(0xffefebe7))),
         trailing: ClipRRect(
           borderRadius: BorderRadius.circular(8.0),
           child: Image.asset(imagePath, width: 100), // Use the passed image path here
