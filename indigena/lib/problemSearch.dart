@@ -89,14 +89,21 @@ class PlantSearchScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: 3, // Number of plants you want to show, can be dynamic
-                itemBuilder: (context, index) {
-                  return PlantInfoCard();
-                },
-              ),
-            ),
+           Expanded(
+  child: ListView.builder(
+    itemCount: 3, // Adjust the item count as needed
+    itemBuilder: (context, index) {
+      // Assuming you have a list of image paths
+      List<String> imagePaths = [
+        'assets/images/temperatedeciduousforest1.png', 
+        'assets/images/temperatedeciduousforest2.png',
+        'assets/images/temperatedeciduousforest3.png',
+      ];
+
+      return PlantInfoCard(imagePath: imagePaths[index]);
+    },
+  ),
+),
           ],
         ),
       ),
@@ -105,14 +112,16 @@ class PlantSearchScreen extends StatelessWidget {
 }
 
 class PlantInfoCard extends StatelessWidget {
-  const PlantInfoCard({super.key});
+  final String imagePath;
+
+  PlantInfoCard({required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
-    return Container( 
+    return Container(
       margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
       decoration: BoxDecoration(
-        color: const Color(0xff406767),
+        color: Colors.white,
         borderRadius: BorderRadius.circular(12.0),
         boxShadow: [
           BoxShadow(
@@ -125,13 +134,14 @@ class PlantInfoCard extends StatelessWidget {
       ),
       child: ListTile(
         contentPadding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-        title: Text('Plant Name', style: TextStyle(fontWeight: FontWeight.bold, color:  const Color(0xffefebe7))),
-        subtitle: Text('basic description that continues with a...', style: TextStyle(color:  const Color(0xffefebe7))),
+        title: Text('Plant Name', style: TextStyle(fontWeight: FontWeight.bold)),
+        subtitle: Text('basic description that continues with a...'),
         trailing: ClipRRect(
           borderRadius: BorderRadius.circular(8.0),
-          child: Image.asset('assets/images/temperatedeciduousforest1.png', width: 100), // Use your own image path
+          child: Image.asset(imagePath, width: 100), // Use the passed image path here
         ),
       ),
     );
   }
 }
+
