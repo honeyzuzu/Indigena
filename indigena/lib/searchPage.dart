@@ -65,7 +65,7 @@ class _SearchPageState extends State<SearchPage> {
                             child: TextField(
                               controller: _searchController,
                               decoration: InputDecoration(
-                                hintText: 'Start typing...',
+                                hintText: 'Start typing a plant name...',
                                 hintStyle: const TextStyle(color: Color(0xff406767)),
 
                                 suffixIcon: IconButton(

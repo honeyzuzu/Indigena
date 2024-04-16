@@ -55,9 +55,10 @@ class PlantSearchScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.0),
+              padding: EdgeInsets.symmetric(horizontal: 60.0),
 
               child: Text(
+                
                 'Problem Search',
                 style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color:  const Color(0xffefebe7)),
               ),
