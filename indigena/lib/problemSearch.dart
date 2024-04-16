@@ -33,7 +33,7 @@ class PlantSearchScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: const Color(0xffefebe7).withOpacity(0.7),
         leading: IconButton(
           icon: Icon(Icons.location_on, color: Colors.black),
           onPressed: () {
@@ -59,7 +59,7 @@ class PlantSearchScreen extends StatelessWidget {
               padding: EdgeInsets.all(16.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: const Color(0xffefebe7).withOpacity(0.7),
                   borderRadius: BorderRadius.circular(8.0),
                   boxShadow: [
                     BoxShadow(
@@ -89,14 +89,21 @@ class PlantSearchScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: 3, // Number of plants you want to show, can be dynamic
-                itemBuilder: (context, index) {
-                  return PlantInfoCard();
-                },
-              ),
-            ),
+           Expanded(
+  child: ListView.builder(
+    itemCount: 3, // Adjust the item count as needed
+    itemBuilder: (context, index) {
+      // Assuming you have a list of image paths
+      List<String> imagePaths = [
+        'assets/images/temperatedeciduousforest1.png', 
+        'assets/images/temperatedeciduousforest2.png',
+        'assets/images/temperatedeciduousforest3.png',
+      ];
+
+      return PlantInfoCard(imagePath: imagePaths[index]);
+    },
+  ),
+),
           ],
         ),
       ),
@@ -105,7 +112,9 @@ class PlantSearchScreen extends StatelessWidget {
 }
 
 class PlantInfoCard extends StatelessWidget {
-  const PlantInfoCard({super.key});
+  final String imagePath;
+
+  PlantInfoCard({required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
@@ -129,9 +138,10 @@ class PlantInfoCard extends StatelessWidget {
         subtitle: Text('basic description that continues with a...'),
         trailing: ClipRRect(
           borderRadius: BorderRadius.circular(8.0),
-          child: Image.asset('assets/images/temperatedeciduousforest1.png', width: 100), // Use your own image path
+          child: Image.asset(imagePath, width: 100), // Use the passed image path here
         ),
       ),
     );
   }
 }
+
