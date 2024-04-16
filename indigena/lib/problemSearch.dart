@@ -6,6 +6,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     // Set the status bar style
@@ -23,6 +25,8 @@ class MyApp extends StatelessWidget {
 }
 
 class PlantSearchScreen extends StatelessWidget {
+  const PlantSearchScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,6 +105,8 @@ class PlantSearchScreen extends StatelessWidget {
 }
 
 class PlantInfoCard extends StatelessWidget {
+  const PlantInfoCard({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container( 
